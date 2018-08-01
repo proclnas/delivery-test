@@ -1,0 +1,12 @@
+{
+    "name": "proclnas/delivery-test",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "proclnas",
+            "email": "proclnas@gmail.com"
+        }
+    ],
+    "require": {}
+}

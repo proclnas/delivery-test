@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  php:
+    build: ./php
+    volumes: 
+      - ./../:/var/www/html/delivery-test
+    depends_on:
+      - mysql
+  mysql:
+    build: ./mysql
+    volumes:
+      - /var/lib/mysql
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: toor
+       MYSQL_DATABASE: delivery-test
+       MYSQL_USER: administrator
+       MYSQL_PASSWORD: administrator
+  nginx:
+    build: ./nginx
+    restart: always
+    depends_on:
+      - php
+    ports:
+      - 8008:80
+    volumes_from:
+      - php
