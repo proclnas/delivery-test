@@ -1,12 +1,37 @@
 {
-    "name": "proclnas/delivery-test",
-    "type": "project",
+    "name": "laravel/lumen",
+    "description": "Delivery project - Php test",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "proclnas",
-            "email": "proclnas@gmail.com"
+    "type": "project",
+    "require": {
+        "php": ">=7.1.3",
+        "laravel/lumen-framework": "5.6.*",
+        "vlucas/phpdotenv": "~2.2"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
         }
-    ],
-    "require": {}
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/",
+            "database/"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true
+    }
 }

@@ -7,6 +7,7 @@ services:
       - ./../:/var/www/html/delivery-test
     depends_on:
       - mysql
+    working_dir: /var/www/html/delivery-test  
   mysql:
     build: ./mysql
     volumes:
