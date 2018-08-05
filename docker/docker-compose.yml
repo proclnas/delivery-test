@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  php:
+  app:
     build: ./php
     volumes: 
       - ./../:/var/www/html/delivery-test
@@ -22,8 +22,8 @@ services:
     build: ./nginx
     restart: always
     depends_on:
-      - php
+      - app
     ports:
       - 8008:80
     volumes_from:
-      - php
+      - app
