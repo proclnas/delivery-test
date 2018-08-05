@@ -1,0 +1,81 @@
+<div style="text-align:center;">
+    <div class="col-md-3"></div>
+    <div class="col-md-7">
+        <h2>Upload clientes - CSV</h2>  
+        <h4>Cabeçalho arquivo</h4>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <th>nome</th>
+                <th>email</th>
+                <th>datanasc</th>
+                <th>cpf</th>
+                <th>endereco</th>
+                <th>cep</th>
+            </thead>
+        </table>
+        
+        <form action="" method="POST">
+            <div class="input-group">
+                <button id="upload-file" class="btn btn-success pull-right" style="margin-botton:15px;">Baixar arquivo de exemplo</button>
+            </div>
+        </form>
+
+        <div class="form-area">
+            <form 
+            class="form"
+            role="form" 
+            action="" 
+            method="POST" 
+            enctype="multipart/form-data">
+                <br style="clear:both">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="name">Nome Arquivo</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="nome_arquivo"
+                            placeholder="ex: Arquivo 1"
+                            required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="arquivo">Arquivo</label>
+                            <input 
+                            accept=".csv" 
+                            type="file" 
+                            class="form-control" 
+                            id="arquivo" 
+                            name="arquivo" 
+                            placeholder="Arquivo" 
+                            required>
+                        </div>
+                        <!--<div class="form-group">
+                            <span class="badge">Separador</span>
+                        </div>-->
+                        <div class="form-group col-md-2">
+                            <label for="name">Separador</label>
+                            <select
+                            class="form-control"
+                            id="separador"
+                            name="separador"
+                            required>
+                                <option value=";">;</option>
+                                <option value=",">,</option>
+                                <option value=".">.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <textarea class="form-control" name="obs" type="textarea" id="message" placeholder="Observação" maxlength="140" rows="7"></textarea>
+                        <span class="help-block"><p id="characterLeft" class="help-block ">Registrar alguma observação
+                        sobre o upload</p></span>
+                    </div>
+
+                    <div class="input-group">
+                        <button id="upload-file" class="btn btn-danger pull-right" style="margin-botton:15px;">Upload file</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

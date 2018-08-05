@@ -11,14 +11,14 @@
 |
 */
 
-/*$router->get('/', function () use ($router) {
-    return $router->app->version();
-});*/
+$router->get('/', function () use ($router) {
+    return view('delivery.index');
+});
 
 $router->group(['prefix' => 'api/v1'], function() use($router){
     $router->get('/clients', 'ClientController@index');
-    $router->post('/client', 'ClientController@create');
-    $router->get('/client/{id}', 'ClientController@show');
-    $router->put('/client/{id}', 'ClientController@update');
-    $router->delete('/client/{id}', 'ClientController@destroy');
+    $router->post('/clients', 'ClientController@create');
+    $router->get('/clients/{id}', 'ClientController@show');
+    $router->put('/clients/{id}', 'ClientController@update');
+    $router->delete('/clients/{id}', 'ClientController@destroy');
 });
