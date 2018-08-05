@@ -14,4 +14,8 @@ class Client extends Model
         'bithdate',
         'email'
     ];
+
+    public function address() {
+        return $this->hasMany('App\Address');
+    }
 }

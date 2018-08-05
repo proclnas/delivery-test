@@ -21,4 +21,10 @@ $router->group(['prefix' => 'api/v1'], function() use($router){
     $router->get('/clients/{id}', 'ClientController@show');
     $router->put('/clients/{id}', 'ClientController@update');
     $router->delete('/clients/{id}', 'ClientController@destroy');
+
+    $router->get('/address', 'AddressController@index');
+    $router->post('/address', 'AddressController@create');
+    $router->get('/address/{id}', 'AddressController@show');
+    $router->put('/address/{id}', 'AddressController@update');
+    $router->delete('/address/{id}', 'AddressController@destroy');
 });

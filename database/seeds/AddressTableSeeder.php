@@ -1,8 +1,9 @@
 <?php
 
+use App\Address;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class AddressTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
-        $this->call('ClientTableSeeder');
+        $clients = factory(Address::class, 1)->create();
     }
 }

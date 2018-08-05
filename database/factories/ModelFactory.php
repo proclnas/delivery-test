@@ -27,3 +27,15 @@ $factory->define(App\Client::class, function (Faker\Generator $faker) {
         'email' => $faker->email
     ];
 });
+
+$factory->define(App\Address::class, function() {
+    return [
+        'lograudoro' => 'R Almirante Brasil',
+        'numero' => '100',
+        'cep' => '06720-080',
+        'cidade' => 'Cotia',
+        'complemento' => '',
+        'bairro' => 'Parque Mirante da Mata',
+        'id_cliente' => 1
+    ];
+});
