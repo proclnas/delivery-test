@@ -16,6 +16,6 @@ class Client extends Model
     ];
 
     public function address() {
-        return $this->hasMany('App\Address');
+        return $this->hasMany('App\Address', 'id_cliente');
     }
 }

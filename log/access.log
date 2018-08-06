@@ -1,11 +1,1 @@
 
-172.18.0.1 - - [05/Aug/2018:00:43:53 +0000] "GET /?page=clientes HTTP/1.1" 200 5158 "http://localhost:8008/?page=home" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:00:43:53 +0000] "GET /css/main.css HTTP/1.1" 200 1059 "http://localhost:8008/?page=clientes" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:02:48 +0000] "GET / HTTP/1.1" 200 1767 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:02:48 +0000] "GET /css/main.css HTTP/1.1" 304 0 "http://localhost:8008/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:02:54 +0000] "GET /api/v1/clients HTTP/1.1" 500 49347 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:03:20 +0000] "GET /api/v1/clients HTTP/1.1" 200 12 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:04:14 +0000] "GET /api/v1/clients HTTP/1.1" 200 4323 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:11:02 +0000] "GET /api/v1/address HTTP/1.1" 200 257 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:22:21 +0000] "GET /api/v1/address HTTP/1.1" 200 257 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
-172.18.0.1 - - [05/Aug/2018:02:22:23 +0000] "GET /api/v1/clients HTTP/1.1" 200 4323 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
