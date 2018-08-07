@@ -24,7 +24,7 @@
             <form 
             class="form"
             role="form" 
-            action="" 
+            action="api/v1/clients/import" 
             method="POST" 
             enctype="multipart/form-data">
                 <br style="clear:both">
@@ -46,7 +46,7 @@
                             type="file" 
                             class="form-control" 
                             id="arquivo" 
-                            name="arquivo" 
+                            name="csv" 
                             placeholder="Arquivo" 
                             required>
                         </div>
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="input-group">
-                        <button id="upload-file" class="btn btn-danger pull-right" style="margin-botton:15px;">Upload file</button>
+                        <button type="submit" id="upload-file" class="btn btn-danger pull-right" style="margin-botton:15px;">Upload file</button>
                     </div>
                 </form>
         </div>

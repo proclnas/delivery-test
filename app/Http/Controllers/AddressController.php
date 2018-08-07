@@ -31,4 +31,14 @@ class AddressController extends Controller {
 
         return response()->json('address removed');
     }
+
+    public function truncate() {
+        try {
+            Address::truncate();
+        } catch(\Exception $e) {
+            return response()->json(['error' => true, 'msg' => $e->getMessage()]);
+        }
+
+        return response()->json(['error' => false, 'msg' => 'Truncate ok']);
+    }
 }
