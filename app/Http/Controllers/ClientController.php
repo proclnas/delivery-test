@@ -43,14 +43,17 @@ class ClientController extends Controller {
         return response()->json(['error' => false, 'msg' => 'Truncate ok']);
     }
 
-    public function import(Request $request) {
+    public function import(Request $request) { 
         if (!$request->hasFile('csv')) {
             return response()->json(['error' => true, 'msg' => 'missing file']);
         }
 
+        $clientsToReturn = [];
         $header = null;
-        $handle = fopen($request->csv, "r");
-        while (($row = fgetcsv($handle, 1000, $request->separador)) !== false) {
+        $handle = fopen($request->csv->path(), 'r');
+        $separador = $request->separador;
+        
+        while (($row = fgetcsv($handle, 1000, $separador)) !== false) {
             if (!$header) {
                 $header = $row;
                 continue;
@@ -69,7 +72,7 @@ class ClientController extends Controller {
                 $client->doc = $record['cpf'];
                 $client->email = $record['email'];
                 $client->bithdate = \DateTime::createFromFormat('d/m/Y', $record['datanasc']);
-                $client->save();
+                if ($client->save()) $clientsToReturn[] = $client->toArray();
 
                 // Parse address and store
                 list(
@@ -95,11 +98,15 @@ class ClientController extends Controller {
                 return response()->json([
                     'error' => true, 
                     'msg' => $e->getMessage(),
-                    'record' => $record
+                    'data-record' => $record
                 ]);
             }
         }
 
-        return response()->json(['error' => false, 'msg' => 'Import ok']);
+        return response()->json([
+            'error' => false, 
+            'msg' => 'ok',
+            'data-record' => $clientsToReturn
+        ]);
     }
 }

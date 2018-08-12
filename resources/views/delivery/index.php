@@ -12,12 +12,10 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html ng-app="delivery">
     <head>
         <title>Delivery</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/main.css" rel="stylesheet" type="text/css" />
@@ -54,6 +52,10 @@
             <p><?= (new DateTime)->format('Y'); ?></p>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+        <script src="js/app.js"></script>
 
     </body>
 </html>

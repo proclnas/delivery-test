@@ -1,4 +1,4 @@
-<div style="text-align:center;">
+<div style="text-align:center;" ng-controller="UploadCtrl">
     <div class="col-md-3"></div>
     <div class="col-md-7">
         <h2>Upload clientes - CSV</h2>  
@@ -14,24 +14,23 @@
             </thead>
         </table>
         
-        <form action="" method="POST">
+        <!--<form action="" method="POST">
             <div class="input-group">
                 <button id="upload-file" class="btn btn-success pull-right" style="margin-botton:15px;">Baixar arquivo de exemplo</button>
             </div>
-        </form>
+        </form>-->
 
         <div class="form-area">
-            <form 
+            <!--<form 
             class="form"
             role="form" 
-            action="api/v1/clients/import" 
-            method="POST" 
-            enctype="multipart/form-data">
+            enctype="multipart/form-data">-->
                 <br style="clear:both">
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label for="name">Nome Arquivo</label>
                             <input
+                            ng-model="nome_arquivo"
                             type="text"
                             class="form-control"
                             id="name"
@@ -41,7 +40,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="arquivo">Arquivo</label>
-                            <input 
+                            <input
+                            onchange="angular.element(this).scope().prepareFile(this.files)"
                             accept=".csv" 
                             type="file" 
                             class="form-control" 
@@ -56,6 +56,7 @@
                         <div class="form-group col-md-2">
                             <label for="name">Separador</label>
                             <select
+                            ng-model="separador"
                             class="form-control"
                             id="separador"
                             name="separador"
@@ -67,15 +68,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                    <textarea class="form-control" name="obs" type="textarea" id="message" placeholder="Observação" maxlength="140" rows="7"></textarea>
+                    <textarea class="form-control" ng-model="obs" name="obs" type="textarea" id="message" placeholder="Observação" maxlength="140" rows="7"></textarea>
                         <span class="help-block"><p id="characterLeft" class="help-block ">Registrar alguma observação
                         sobre o upload</p></span>
                     </div>
 
                     <div class="input-group">
-                        <button type="submit" id="upload-file" class="btn btn-danger pull-right" style="margin-botton:15px;">Upload file</button>
+                        <button ng-click="import()" id="upload-file" class="btn btn-danger pull-right" style="margin-botton:15px;">Upload file</button>
                     </div>
-                </form>
+                <!--</form>-->
         </div>
     </div>
 </div>
