@@ -25,6 +25,9 @@ $router->group(['prefix' => 'api/v1'], function() use($router){
     // Import csv
     $router->post('/clients/import', 'ClientController@import');
 
+    // Entregas
+    $router->get('/clients/entregas', 'ClientController@entregas');
+
     // Truncate clients
     $router->get('/clients/truncate', 'ClientController@truncate');
 

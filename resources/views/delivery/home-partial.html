@@ -1,6 +1,85 @@
-<div style="text-align:center;">
-    <div class="col-md-3"></div>  
-    <div class="col-md-7">
+<div style="text-align:center;" ng-controller="EntregaCtrl">
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Detalhes e rota entrega</h4>
+                </div>
+                <div class="modal-body">
+                    <p>A rota abaixo é a melhor calculada e está disponível no app para o motorista responsável</p>
+                    
+                    <div id="mapa" style="height: 500px;"></div>
+                    <div id="trajeto-texto" style="height: 300px; overflow-y: auto;"></div> 
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+      
+        </div>
+      </div>
+      
+    <div>
         <h2>Clientes e entregas</h2>
+        <div style="margin-top: 100px;">
+            <h3>Próximas entregas</h3>
+
+            <table ng-if="entregas" class="table table-bordered table-striped table-condensed table-responsive">
+                <thead>
+                    <th>NOME CLIENTE</th>
+                    <th>DOC</th>
+                    <th>RUA</th>
+                    <th>NÚMERO</th>
+                    <th>CEP</th>
+                    <th>ROTAS</th>
+                    <th>STATUS</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="entrega in entregas">
+                        <td class="text-nowrap">{{entrega.name | uppercase}}</td>
+                        <td class="text-nowrap">{{entrega.doc}}</td>
+                        <td class="text-nowrap" class="lograudoro">{{entrega.address[0].lograudoro | uppercase}}</td>
+                        <td class="text-nowrap" class="numero">{{entrega.address[0].numero}}</td>
+                        <td class="text-nowrap" class="cep">{{entrega.address[0].cep}}</td>
+                        <td class="text-nowrap" ng-click="openModal(this)">
+                            <button type="button" class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span> 
+                                Visualizar Rota
+                            </button>
+                        </td>
+                        <td class="text-nowrap">Pendente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <h3>Clientes</h3>
+
+            <table ng-if="clientes" class="table table-bordered table-striped table-condensed table-responsive">
+                <thead>
+                    <th>NOME CLIENTE</th>
+                    <th>DOC</th>
+                    <th>RUA</th>
+                    <th>NÚMERO</th>
+                    <th>CEP</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cliente in clientes">
+                        <td class="text-nowrap">{{cliente.name | uppercase}}</td>
+                        <td class="text-nowrap">{{cliente.doc}}</td>
+                        <td class="text-nowrap" class="lograudoro">{{cliente.address[0].lograudoro | uppercase}}</td>
+                        <td class="text-nowrap" class="numero">{{cliente.address[0].numero}}</td>
+                        <td class="text-nowrap" class="cep">{{cliente.address[0].cep}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

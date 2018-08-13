@@ -109,4 +109,10 @@ class ClientController extends Controller {
             'data-record' => $clientsToReturn
         ]);
     }
+
+    public function entregas() {
+        $clientsAndAddress = Client::with('address')->get();
+
+        return response()->json($clientsAndAddress);
+    }
 }
