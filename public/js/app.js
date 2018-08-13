@@ -6,12 +6,6 @@
     app.controller('UploadCtrl', function($scope, $http){
         $scope.test = 'ok';
         $scope.fd = new FormData();
-        
-        $http({
-            'url': 'api/v1/clients'
-        }).then(function(res){
-            console.log(res.data);
-        });
 
         $scope.prepareFile = function(files) {
             $scope.fd.delete('csv');
@@ -39,9 +33,12 @@
                     headers: {'Content-Type': undefined },
                     transformRequest: angular.identity
                 }).then(function(res){
+                    var iconLabel = res.data.error ? 'error' : 'success';
+                    var textLabel = res.data.msg;
+
                     swal({
-                        text: 'Arquivo importado',
-                        icon: 'success',
+                        text: textLabel,
+                        icon: iconLabel,
                         buttons: true
                     });
                 }).catch(function(err){

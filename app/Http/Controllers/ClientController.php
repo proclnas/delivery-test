@@ -46,6 +46,8 @@ class ClientController extends Controller {
     public function import(Request $request) { 
         if (!$request->hasFile('csv')) {
             return response()->json(['error' => true, 'msg' => 'missing file']);
+        } elseif (!$request->separador) {
+            return response()->json(['error' => true, 'msg' => 'Informe um separador válido']);
         }
 
         $clientsToReturn = [];
@@ -54,6 +56,10 @@ class ClientController extends Controller {
         $separador = $request->separador;
         
         while (($row = fgetcsv($handle, 1000, $separador)) !== false) {
+            if(count($row) <= 1) {
+                return response()->json(['error' => true, 'msg' => 'Separador no arquivo diferente do informado']);
+            }
+
             if (!$header) {
                 $header = $row;
                 continue;
