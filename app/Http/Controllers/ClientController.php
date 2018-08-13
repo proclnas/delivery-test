@@ -80,7 +80,6 @@ class ClientController extends Controller {
                 $client->bithdate = \DateTime::createFromFormat('d/m/Y', $record['datanasc']);
                 if ($client->save()) $clientsToReturn[] = $client->toArray();
 
-                // Parse address and store
                 list(
                     $logradouroComNumero,
                     $bairro,
