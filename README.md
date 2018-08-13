@@ -32,3 +32,9 @@ http://localhost:8008/api/v1
 http://localhost:8008/
 ```
 
+Prints:
+
+![1](img/1.png "1")
+![2](img/2.png "2")
+![4](img/2.png "4")
+
