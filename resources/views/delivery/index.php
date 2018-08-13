@@ -42,7 +42,7 @@
                     </h4>
                     <hr>
                     <div id="include-container">
-                        <?= require $pageToInclude; ?>
+                        <?php include $pageToInclude; ?>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-        <script src="http://maps.googleapis.com/maps/api/js?key="></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6SQHp9ptzUkXMAcSYgrdVgFYmNRsvYsI"></script>
         <script src="js/app.js"></script>
 
     </body>

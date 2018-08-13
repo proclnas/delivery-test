@@ -31,6 +31,9 @@ $router->group(['prefix' => 'api/v1'], function() use($router){
     // Truncate clients
     $router->get('/clients/truncate', 'ClientController@truncate');
 
+    // Export
+    $router->get('/clients/export', 'ClientController@export');
+
     $router->get('/address', 'AddressController@index');
     $router->post('/address', 'AddressController@create');
     $router->get('/address/{id}', 'AddressController@show');

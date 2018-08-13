@@ -115,4 +115,26 @@ class ClientController extends Controller {
 
         return response()->json($clientsAndAddress);
     }
+
+    public function export() {
+        $clientsAndAddress = Client::with('address')->get();
+        $data = ['nome;email;datanasc;cpf'];
+        foreach ($clientsAndAddress as $ca) {
+            $ca = $ca->toArray();
+            $row = implode(';', [
+                $ca['name'],
+                $ca['email'],
+                $ca['bithdate'],
+                $ca['doc']
+            ]);
+
+            $data[] = $row;
+        }
+
+        $filename = sprintf('/tmp/export-clients-%s.csv', uniqid());
+        $fp = fopen($filename, 'w');
+        foreach ($data as $row) fputs($fp, sprintf("%s\n", $row));
+
+        return response()->download($filename);
+    }
 }

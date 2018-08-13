@@ -64,6 +64,7 @@
             $scope.loading = true;
             $http.get('api/v1/clients/entregas').then(function(res){
                 $scope.entregas = res.data;
+                $scope.clientes = res.data;
                 $scope.loading = false;
             });
         }
@@ -87,6 +88,10 @@
                     directionsDisplay.setPanel(document.getElementById('trajeto-texto'));
                 }
             });
+        }
+
+        $scope.exportCsv = function() {
+            window.location.href = 'api/v1/clients/export';
         }
 
         function initialize() {
